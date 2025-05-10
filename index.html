@@ -1,0 +1,57 @@
+
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login & Register</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-box">
+      <div class="tabs">
+        <button id="loginTab" class="active" onclick="switchTab('login')">Login</button>
+        <button id="registerTab" onclick="switchTab('register')">Register</button>
+      </div>
+
+      <form id="loginForm" class="form active" onsubmit="handleSubmit(event, 'login')">
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <button type="submit" class="submit">Login</button>
+      </form>
+
+      <form id="registerForm" class="form" onsubmit="handleSubmit(event, 'register')">
+        <input type="text" id="registerUsername" placeholder="Username" required />
+        <input type="email" id="registerEmail" placeholder="Email" required />
+        <input type="password" id="registerPassword" placeholder="Password" required />
+        <button type="submit" class="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(tab) {
+      document.getElementById("loginTab").classList.remove("active");
+      document.getElementById("registerTab").classList.remove("active");
+      document.getElementById("loginForm").classList.remove("active");
+      document.getElementById("registerForm").classList.remove("active");
+
+      document.getElementById(tab + "Tab").classList.add("active");
+      document.getElementById(tab + "Form").classList.add("active");
+    }
+
+    function handleSubmit(event, type) {
+      event.preventDefault();
+      let user = '';
+      if (type === 'login') {
+        user = document.getElementById('loginEmail').value;
+      } else {
+        user = document.getElementById('registerUsername').value;
+      }
+
+      localStorage.setItem('gameUser', user);
+      window.location.href = 'game.html';
+    }
+  </script>
+</body>
+</html>

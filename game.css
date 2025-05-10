@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.game-container {
+  padding: 30px;
+}
+
+#star {
+  width: 60px;
+  height: 60px;
+  background: url('https://cdn-icons-png.flaticon.com/512/616/616489.png') no-repeat center/contain;
+  position: absolute;
+  cursor: pointer;
+  transition: top 0.2s, left 0.2s;
+}

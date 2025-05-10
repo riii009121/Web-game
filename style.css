@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.auth-box {
+  padding: 2rem;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 12px;
+  background: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border-radius: 8px 8px 0 0;
+}
+
+.tabs button.active {
+  background: #2575fc;
+  color: white;
+}
+
+.form {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form.active {
+  display: flex;
+}
+
+input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+button.submit {
+  padding: 12px;
+  font-size: 1.1rem;
+  background-color: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s

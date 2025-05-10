@@ -1,0 +1,43 @@
+<!<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Catch the Star</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Selamat datang, <span id="playerName"></span>!</h1>
+    <h2>Skor: <span id="score">0</span></h2>
+    <div id="star"></div>
+  </div>
+
+  <script>
+    const name = localStorage.getItem('gameUser');
+    if (!name) {
+      window.location.href = 'index.html';
+    } else {
+      document.getElementById('playerName').textContent = name;
+    }
+
+    let score = 0;
+    const star = document.getElementById('star');
+    const scoreDisplay = document.getElementById('score');
+
+    function moveStar() {
+      const x = Math.random() * 90;
+      const y = Math.random() * 80;
+      star.style.top = `${y}vh`;
+      star.style.left = `${x}vw`;
+    }
+
+    star.addEventListener('click', () => {
+      score++;
+      scoreDisplay.textContent = score;
+      moveStar();
+    });
+
+    setInterval(moveStar, 1000);
+  </script>
+</body>
+</html>
